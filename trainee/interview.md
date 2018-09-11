@@ -12,7 +12,7 @@
 **Technical Round**
  - Based on Resume  the difficulty level differs: 
  - mostly asked basics, 
-- Hackerrank solved  questions explaination,
+- Hackerrank solved  questions explanation,
  - Time complexities,
 - Scalability of our program,
 - few problem solving challenges,
@@ -24,13 +24,13 @@
 **Management Round**
 - Based on Favourite Subject
 - DBMS schema for the given scenario.
- - Algortihms implemented  in project .	
+ - Algorithms implemented  in project .	
 	
 **HR Round**
 - Personal Interests.
 - Previous companies.
-- Why rejected prev companies
-- Stipend
+- What companies did you attend?
+- Stipend details
 - Location constraints
 - Subject Details 
 - Availaibility and Personal Constraints. 
@@ -52,8 +52,8 @@
             
 **What was in Interviewer’s mind while taking interview?**
   - Analyzing presence of mind 
-  - Scalality of the Programs.
-- Attidude and wllingness to learn.
+  - Scalability of the Programs.
+- Attitude and willingness to learn.
 - Analytical Skills 
  - Logic and ability to explain project 
  - Technical logic 
@@ -61,7 +61,6 @@
 - How interest originated in candidate.
 
 **What was in candidate’s mind while giving interview?**
-- Apart from technical questions asked questions on projects
 - Why questions has been stressed more on Mathematics ?
 
 
