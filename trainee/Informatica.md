@@ -1,7 +1,5 @@
 # Informatica power center ETL/data integration tool: #
 
-****
-
 **1.About the tool:**
 
 The latest version of Informatica PowerCenter available is 9.6.0. The
