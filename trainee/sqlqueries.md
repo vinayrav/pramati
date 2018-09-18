@@ -10,13 +10,11 @@ SELECT a.name Emp_Name,ad.name Employee_dept ,bd.name Manager_dept FROM employee
 4.**List of employees without a manager**
 select name from employee WHERE mgr_id IS NULL;
 
-5.** List of terminated manager names**
+5.**List of terminated manager names**
 select distinct b.name AS manager_names from employee a,employee b where a.mgr_id=b.emp_id and extract(YEAR from b.termination_date)<2019;
 
 6.**List of department names where we have a terminated employee**
  select distinct ad.name Dept_name from employee a,employee b,dept ad,dept bd  where a.mgr_id=b.emp_id and b.termination_date<now()::date and ad.dept_id=a.dept_id and bd.dept_id=b.dept_id;
-
-
 
 7.**List of department names where we have a terminated Manager**
 select distinct d.name as "Department name" from dept d, employee e where d.dept_id=e.dept_id and e.termination_date is not null;
