@@ -115,7 +115,7 @@ CREATE TABLE
 resume=# insert into resume_collect values (1,'vinay','vinayr@gmail.com','9898989898');
 INSERT 0 1
 resume=# select * from resume_collect;
- id | filename |      email       |   phone    
+ id | filename |      email       |   phone
 ----+----------+------------------+------------
   1 | vinay    | vinayr@gmail.com | 9898989898
 (1 row)
