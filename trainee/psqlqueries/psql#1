@@ -27,7 +27,7 @@ AND b.dept_id=bd.dept_id;
 SELECT name from employee 
 WHERE mgr_id IS NULL;
 ```
-5.** List of terminated manager names**
+5.**List of terminated manager names**
 ```
 SELECT distinct b.name AS manager_names 
 FROM employee a,employee b 
