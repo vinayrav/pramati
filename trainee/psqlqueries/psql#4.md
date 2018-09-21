@@ -249,6 +249,7 @@ https://www.postgresql.org/docs/9.1/static/sql-createtable.html
 ALTER TABLE employee1 ADD COLUMN peer_emp_ids int[];
 ```
 **7. write an insert statement to populate this table from employee table where peer_emp_ids is the employee ids of its manager excluding the given employee**
+```
 
 insert into employee1
 SELECT
@@ -262,8 +263,10 @@ SELECT
 	) - ARRAY [ e.emp_id ]
 FROM
 	employee e
+```	
 
 **8. Write a SQL to find all the employees for the given employee id where the given employee is part of using peer_emp_ids**
+```
 SELECT
 	*
 FROM
@@ -271,6 +274,7 @@ FROM
 INNER JOIN employee1 e1 ON e.emp_id = ANY (e1.peer_emp_ids)
 WHERE
 	e1.emp_id = 3
+```
     
 **9. Write an anonymous block which will do the below steps
 9a. Create employee_bulk table with same struct as employee table
