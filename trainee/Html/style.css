@@ -1,99 +1,126 @@
 body{
-width:1000px;
-margin:0 auto;
+margin:0;
+padding:0;
 }
-.one{
+.iconspace{
 height:100px;
-border-bottom:1.7px dashed lightgray;
+border-bottom:2px dashed lightgray;
 }
-.oneleft{
+.iconleft{
 float:left;
+padding-left:80px;
 }
 
-.oneright{
+.iconright{
 float:right;
+padding-right:30px;
+padding-top:20px;
 
 }
 
 .icontext{
 top:0px;
 }
-
-
-.two{
-height:290px;
-padding-top:6px;
-padding-bottom:6px;
-top:10px;
-border-bottom:1.7px dashed lightgray;
+.space{
+padding-left:10px;
+padding-right:10px;
 }
 
-.three{
+.banner{
+padding-top:10px;
+padding-bottom:10px;
+padding-left:20px;
+padding-right:20px;
 top:10px;
-height:110px;
+border-bottom:2px dashed lightgray;
+}
+
+.content{
+top:10px;
+
 padding-top:3px;
-border-bottom:1.7px dashed lightgray;
-padding-bottom:6px;
+border-bottom:2px dashed lightgray;
+
+padding-left:20px;
+text-align:left;
 }
-.p1{
-font-size:23px;
-font-weight:bold;
+
+.p2{
+font-family:arial;
+}
+
+h2{
 color:green;
 }
-
-.four{
-
+.subcontent{
+overflow:auto;
 display:table;
 top:20px;
 height:200px;
-border-bottom:1.7px dashed lightgray;
+
 padding-bottom:2px;
 }
 
-.lefttext {
+.subcontentlefttext {
     float:left;
-    width: 250px;
+    width: 30%;
     top:-115px;
     margin-left:17px; 
-   
+    margin-top:16px;
     padding-left:6px;
     padding-right:10px;
     border-right:1.7px dashed lightgray;
-    text-align:justify;
+    text-align:left;
 }
 
 
-.middletext {
+.subcontentmiddletext {
     display: inline-block;
-    width: 250px;
+    width: 27%;
     top:-115px;
     margin-left:17px;
+margin-top:16px;
     padding-left:3px; 
     padding-right:1px;
-    text-align:justify;
+    text-align:left;
     
 }
-.righttext {
+.subcontentrighttext {
   
     float:right;
-    width: 400px;
-    text-align:justify;
+     width:35%;
+    text-align:left;
     padding-left:10px;
-    margin-top:12px;
+    margin-top:16px;
     margin-left:17px;
     border:7px solid #99994d;
     background-color:#e5e5cc;
 }
+.list
+{
+list-style-image:url("bullet.png");
+padding:8px;
 
-
-.five{
-
-height:50px;
-top:10px;
+}
+.listspace{
+ padding-left:4em;
+}
+.readmore{
+ float:right;
 
 }
 
-.rightfive{
+
+.footer{
+
+height:50px;
+top:10px;
+border-top:1.7px dashed lightgray;
+margin-top:7px;
+
+}
+
+.footerright{
 float:right;
 
 }
@@ -113,3 +140,4 @@ a:hover {
 .over{
 overflow:auto;
 }
+
