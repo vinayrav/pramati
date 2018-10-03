@@ -12,7 +12,6 @@ $(document).ready(function () {
 
 function val() {
   var i = 0;
-
   var flag = 0;
   var blankflag = 0;
   var fname = document.getElementById("fname").value;
