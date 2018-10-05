@@ -40,7 +40,7 @@ $(document).ready(function () {
   $('#number').focusout(function () {
     focus = 1;
     $("#number_error").text("Invalid Mobile Number");
-    if ($('#number').val().length < 1 || !/^([6-9]+[/d]{9})?$/.test($('#number').val())) {
+    if ($('#number').val().length < 1 || !/^([6-9]+[\d]{9})?$/.test($('#number').val())) {
       $("#number_error").show();
     } else {
       $("#number_error").hide();
