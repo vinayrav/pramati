@@ -4,8 +4,8 @@ padding:0px;
 }
 .iconspace {
 height: 100px;
-margin-right: 10px;
-margin-left: 10px;
+margin-right: 15px;
+margin-left: 5px;
 }
 .icon-left {
 position: relative;
@@ -15,7 +15,7 @@ left: 30px;
 .icon-right {
 position: relative;
 top: -50px;
-right: -1050px;
+left:1000px;
 }
 .dashed-border {
 border: 1px dashed lightgray;
@@ -62,20 +62,19 @@ font-family:arial;
 font-size: 15px;
 }
 .space-home {
-padding-left: 8px;
-padding-right: 21px;
+padding-left: 22px;
+padding-right: 20px;
 }
 .space-about {
-padding-left: 5px;
-padding-right: 21px;
+padding-left: 15px;
+padding-right: 20px;
 }
 .space-idea {
-padding-left: 9px;
-padding-right: 21px;
+padding-left: 20px;
+padding-right: 20px;
 }
 .spacepara {
-margin-top: -2px;
-margin-left: -15px;
+margin-top: -15px;
 }
 .sub-content {
 display: table;
@@ -123,6 +122,7 @@ margin-top: 10px;
 }
 .footer-right {
 float: right;
+margin-top: 10px;
 }
 .list {
 list-style-image: url("bullet.png");
@@ -134,6 +134,17 @@ color: black;
 background-color: transparent;
 text-decoration: none;
 }
+.icon-link-space{
+	padding: 0px;
+	margin: 0px;
+}
+.icons-link-space{
+	margin-left: 37px;
+}
+
+
+
+
 
 
 
