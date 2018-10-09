@@ -1,7 +1,8 @@
 $(document).ready(function () {
+$("#form").trigger("reset");
   $("#datepicker").datepicker({
     format: 'mm-dd-yyyy',
-    endDate: '-1d',
+    endDate: '+0d',
     autoclose: true
   });
     $("#fname").keyup(function () {
@@ -13,7 +14,7 @@ $(document).ready(function () {
   $('#fname').focusout(function () {
     focus = 1;
     $('#fname_error').text("Invalid first name");
-    if ($('#fname').val().length < 1 || !/^[a-zA-Z\' ']+$/.test($('#fname').val())) {
+    if ($('#fname').val().length < 1 || !/^[^-\s][a-zA-Z\s-]*$/.test($('#fname').val())) {
       $('#fname_error').show();
     } else {
       $('#fname_error').hide();
@@ -22,7 +23,7 @@ $(document).ready(function () {
   $('#lname').focusout(function () {
     focus = 1;
     $('#lname_error').text("Invalid last name");
-    if ($('#lname').val().length < 1 || !/^[a-zA-Z\' ']+$/.test($('#lname').val())) {
+    if ($('#lname').val().length < 1 || !/^[^-\s][a-zA-Z\s-]*$/.test($('#lname').val())) {
       $('#lname_error').show();
     } else {
       $('#lname_error').hide();
@@ -40,7 +41,7 @@ $(document).ready(function () {
   $('#number').focusout(function () {
     focus = 1;
     $("#number_error").text("Invalid Mobile Number");
-    if ($('#number').val().length < 1 || !/^([6-9]+[\d]{9})?$/.test($('#number').val())) {
+    if ($('#number').val().length < 1 || !/^([6-9]+[\d]{9}){1}$/.test($('#number').val())) {
       $("#number_error").show();
     } else {
       $("#number_error").hide();
@@ -83,7 +84,7 @@ $(document).ready(function () {
       var phone_number = $('#number').val();
       var dob = $('#datepicker').val();
       tab.append("<tr ><td class='text-center' >" + first_name + "</td><td class='text-center'>" + last_name + "</td><td class='text-center'>" + email + "</td><td class='text-center' >" + phone_number + "</td><td class='text-center'>" + dob + "</td></tr>");
-      $('#sample_form').trigger("reset");
+      $('#form').trigger("reset");
       focus = 0
     } else if (focus == 0) {
       $('#fname_error').text("Invalid first name");
@@ -101,6 +102,8 @@ $(document).ready(function () {
     }
   });
 });
+
+
 
 
 
