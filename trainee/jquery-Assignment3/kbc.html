@@ -1,0 +1,50 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="kbc.css">
+    <script type="text/javascript" src="kbc.js"></script>
+</head>
+<body>
+    <div class="start-button">
+        <button type="button" id="start_quiz" onclick="start_quiz();">START</button>
+    </div>
+    <div class="pannel-questions">
+        <div class="panel panel-info">
+            <div class="panel-heading">QUESTIONS</div>
+            <div class="panel-body">
+                <div class="question" id="questions">QUESTION</div>
+                <input class="a-radio" type="radio" id="a_radio" name="correctAnswer" value="A" />
+                <label id="option_a" class="option-a">CLICK ON START a</label>
+                <input class="b-radio" type="radio" id="b_radio" name="correctAnswer" value="B" />
+                <label id="option_b" class="option-b">CLICK ON START b</label>
+                <input class="c-radio" type="radio" id="c_radio" name="correctAnswer" value="C" />
+                <label id="option_c" class="option-c">CLICK ON START c</label>
+                <input class="d-radio" type="radio" id="d_radio" name="correctAnswer" value="D" />
+                <label id="option_d" class="option-d">CLICK ON START d</label>
+            </div>
+            <div class="timer-box" id="timer">TIMER BOX</div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="pannel-functions">
+        <div class="panel panel-info">
+            <div class="panel-heading">SELECT</div>
+            <div class="panel-body">
+                <div class="quit-button">
+                    <button type="button" class="quit">QUIT</button>
+                </div>
+                <div class="next-button">
+                    <button type="button" class="next" id="next">NEXT</button>
+                </div>
+                <div class="submit-button">
+                    <button type="button" class="submit">SUBMIT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
