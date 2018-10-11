@@ -7,9 +7,9 @@
   padding-left: 10px;
   width: 100%;
 }
-.context-text{
-padding:0;
-margin:0;
+.context-text {
+  padding: 0;
+  margin: 0;
 
 }
 
@@ -49,7 +49,7 @@ margin:0;
   text-decoration: none;
 }
 
-.banner{
+.banner {
   padding-top: 8px;
   padding-bottom: 6px;
   border-width: 1px 0 1px 0;
@@ -66,15 +66,15 @@ margin:0;
 .heading {
   padding-left: 1px;
   color: green;
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
 }
 
 .main-content-section {
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
-  padding-top:10px;
+  padding-top: 10px;
 }
 
 .subcontent {
@@ -116,17 +116,12 @@ margin:0;
   padding-bottom:10px;
   margin-top: 4px;
   margin-left: 23px;
-  margin-right: -10px;
+  margin-right: 0px;
   border: 7px solid #99994d;
   background-color: #e5e5cc;
 }
 
-.read-more-left {
-  float: right;
-  padding-top: 90px;
-  padding-right: 5px;
-}
-.read-more-middle {
+.read-more {
   float: right;
   padding-top: 60px;
   padding-right: 5px;
@@ -148,6 +143,7 @@ margin:0;
 
 .footer-right {
   float: right;
+  padding-bottom: 20px;
 }
 
 .dashed-border {
