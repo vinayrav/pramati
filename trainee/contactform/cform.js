@@ -1,10 +1,21 @@
+function validation(text, reg_Ex) {
+ return reg_Ex.test(text) ? true : false;
+}
 $(document).ready(function () {
 $("#form").trigger("reset");
   $("#datepicker").datepicker({
-    format: 'mm-dd-yyyy',
-    endDate: '+0d',
-    autoclose: true
-  });
+  format: "mm/dd/yyyy",
+  minDate: new Date(1990,01, 1),
+  maxDate: '-1d',
+  autoclose: true,
+  onClose: function() {
+   focus_dob = 1;
+   $("#date_error").text("Invalid Date Of birth");
+   given=new Date($(this).val());
+   min_date=new Date(01/01/1990);
+   $(this).val().length < 1 ? $('#date_error').show():(given < min_date ? $('#date_error').show() : $('#date_error').hide());
+  }
+ });
     $("#fname").keyup(function () {
     $('#fname').css('textTransform', 'capitalize');
   });
