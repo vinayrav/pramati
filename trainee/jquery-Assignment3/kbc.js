@@ -48,17 +48,17 @@
    id = setInterval(function() {
      myTimer()
    }, 1000);
-   d = 5;
+   time = 5;
 
    function myTimer() {
-     if (d >= 0)
-       document.getElementById("timer").innerHTML = d--;
+     if (time >= 0)
+       document.getElementById("timer").innerHTML = time--;
      else {
        if (tick <= 0) {
-         d = 0;
+         time = 0;
          clearInterval(id);
          alert(score);
-       } else if (tick > 0 && d < 0) {
+       } else if (tick > 0 && time < 0) {
          $('#submit').hide();
        }
      }
