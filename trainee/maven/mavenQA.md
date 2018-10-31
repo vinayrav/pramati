@@ -27,14 +27,23 @@ You will notice that the generate goal created a directory with the same name gi
 *ref:*https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
 
 # 4.How you will verify the jar?
+*java -cp target/demo-0.0.1-SNAPSHOT.jar com.sample.demo.App*
 
-5.use the jar built in other project?
 
-6.build in one macihne use it in another machine?
+# 5.use the jar built in other project?
+<dependency>
+         <groupId>com.sample</groupId>
+         <artifactId>demo</artifactId>
+         <version>0.0.1-SNAPSHOT</version>
+         <scope>system</scope>
+         <systemPath>/home/vinayr/eclipse-workspace/demo/target/demo-0.0.1-SNAPSHOT.jar</systemPath>
+      </dependency>
+
+# 6.build in one macihne use it in another machine?
 
 (old)
 
-7.other build tools(like maven)
+# 7.other build tools(like maven)
 Gradle
-intelliJ idea
+Apache Ant
 
