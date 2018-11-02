@@ -11,13 +11,27 @@ Archetype is a Maven project templating toolkit.
 An archetype is defined as an original pattern or model from which all other things of the same kind are made. 
 The name fits as we are trying to provide a system that provides a consistent means of generating Maven projects
 Maven tries to avoid as much configuration as possible, by supplying project templates named archetypes.
+*eg:quickstart,webapp,plugin*
 
 Archetypes are packaged up in a JAR and they consist of the archetype metadata which describes the contents of archetype, and a set of Velocity templates which make up the prototype project.
-ref:https://maven.apache.org/guides/introduction/introduction-to-archetypes.html
+*ref:https://maven.apache.org/guides/introduction/introduction-to-archetypes.html*
 
 # 3.Why do we use interactive mode?
    If you don’t know which parameters to provide, you can always specify interactiveMode=true, so that Maven asks for all the required parameters.
 # 4.Any other parameters in maven other than package?
+**validate**
+Validates that the project is correct and all necessary information is available. This also makes sure the dependencies are downloaded.
+**compile**
+Compiles the source code of the project.
+**test**
+Runs the tests against the compiled source code using a suitable unit testing framework. These tests should not require the code be packaged or deployed.
+**package**
+Packs the compiled code in its distributable format, such as a JAR.
+**install**
+Install the package into the local repository, for use as a dependency in other projects locally.
+**deploy**
+Copies the final package to the remote repository for sharing with other developers and projects.
+*ref:https://www.baeldung.com/maven*
 
 # 5.What is a goal in maven?
 Goals are executed in phases which help determine the order goals get executed in.
@@ -40,7 +54,7 @@ Copies the final package to the remote repository for sharing with other develop
 # 6.How to use remote repository in maven?
 Apart from central repository, you may have needed artifacts deployed on other remote locations.
 For example, in your corporate office there may be projects or modules specific to organization only.
-In this cases, organization can create remote repository and deploy these private artifacts. 
+In this case, organization can create remote repository and deploy these private artifacts. 
 This remote repository will be accessible only inside organization.
 
 These maven remote repository work exactly same way as maven’s central repository. Whenever an artifact is needed from these repositories, it is first downloaded to developer’s local repository and then it is used.
@@ -48,12 +62,30 @@ These maven remote repository work exactly same way as maven’s central reposit
 You can configure a remote repository in the POM file or super POM file in remote repository itself.
 <repositories>
    <repository>
-       <id>org.source.repo</id>
+       <id></id>
        <url>*link*</url>
    </repository>
 </repositories>
 
-# 7.Maven vs Ant vs Gradle
+# 7.Write Manifest file
+<build>
+<plugins>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-jar-plugin</artifactId>
+<version>2.4</version>
+<configuration>
+<archive>
+<manifest>
+<mainClass>com.sample.demo.App</mainClass>
+</manifest>
+</archive>
+</configuration>
+</plugin>
+</plugins>
+</build>
+
+# 9.Maven vs Ant vs Gradle
 **Maven**
     Dependencies management does not handle conflicts well between different versions of the same library.
     Customization of targets (goals) is hard
@@ -61,8 +93,34 @@ You can configure a remote repository in the POM file or super POM file in remot
     Gradle does not use XML. Instead, it had its own DSL based on Groovy (one of JVM languages). 
     As a result, Gradle build scripts tend to be much shorter and clearer than those written for Ant or Maven.
 **Ant**
+    Apache Ant's construct files are written in XML 
     XML being hierarchical in nature, is not a good fit for procedural programming approach.
     XML tends to become unmanageably big when used with big projects.
+
+# 10.What is the use of first line(links) in pom.xml?
+Has information regarding xml
+XML Namespaces provide a method to avoid element name conflicts.
+In XML, element names are defined by the developer. This often results in a conflict when trying to mix XML documents from different XML applications.
+Has schema(viz.format,syntax)
+Has schema location
+
+# 12.Tags used in maven
+There are many tags used in maven
+categories include
+The Basics 
+  groupid
+  Artifact id
+  version
+Build Settings
+  Build
+  Report
+Project Information 
+  Name
+  Description
+Environment Settings
+  plugins
+  prerequisites
+
 
 
 
