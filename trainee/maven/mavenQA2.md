@@ -19,6 +19,7 @@ Archetypes are packaged up in a JAR and they consist of the archetype metadata w
 # 3.Why do we use interactive mode?
    If you don’t know which parameters to provide, you can always specify interactiveMode=true, so that Maven asks for all the required parameters.
 # 4.Any other parameters in maven other than package?
+options,phase,goals
 **validate**
 Validates that the project is correct and all necessary information is available. This also makes sure the dependencies are downloaded.
 **compile**
@@ -50,6 +51,16 @@ Packs the compiled code in its distributable format, such as a JAR.
 Install the package into the local repository, for use as a dependency in other projects locally.
 **deploy**
 Copies the final package to the remote repository for sharing with other developers and projects.
+Each phase is a sequence of goals, and each goal is responsible for a specific task.
+
+When we run a phase – all goals bound to this phase are executed in order.
+Here are some of the phases and default goals bound to them:
+
+    compiler:compile – the compile goal from the compiler plugin is bound to the compile phase
+    compiler:testCompile is bound to the test-compile phase
+    install:install is bound to install phase
+    jar:jar and war:war is bound to package phase
+
 
 # 6.How to use remote repository in maven?
 Apart from central repository, you may have needed artifacts deployed on other remote locations.
@@ -96,6 +107,7 @@ You can configure a remote repository in the POM file or super POM file in remot
     Apache Ant's construct files are written in XML 
     XML being hierarchical in nature, is not a good fit for procedural programming approach.
     XML tends to become unmanageably big when used with big projects.
+*ref:https://www.baeldung.com/ant-maven-gradle*
 
 # 10.What is the use of first line(links) in pom.xml?
 Has information regarding xml
