@@ -1,0 +1,94 @@
+pdf box
+
+
+mvn project
+   generate pub and pri keys
+   command line:keytool -storepass 123456 -storetype PKCS12 -keystore file.p12 -genkey -alias client -keyalg RSA
+   unit test
+   oops concepts
+   file location
+
+
+grp id unique to only one organisation
+w main cls in jar
+
+archetype temp
+
+
+
+To maipulate pdf files using java
+
+Apache PDFBox has these components:
+
+    PDFBox: the main part
+    FontBox: handles font information
+    XmpBox: handles XMP metadata
+    Preflight (optional): checks PDF files for PDF/A-1b conformity.
+
+Electronic vs digital sign
+cms
+The Cryptographic Message Syntax (CMS) is the IETF's standard for cryptographically protected messages. It can be used to digitally sign, digest, authenticate or encrypt any form of digital data. 
+-----------------------------------------
+Acroform
+AcroForms are the original PDF forms technology, first introduced in 1998. AcroForms accept input in both Forms Data Format (FDF) and XML Forms Data Format (XFDF). Many 3rd party vendors support AcroForms.
+-----------------------------------------
+PAdES
+PAdES (PDF Advanced Electronic Signatures) is a set of restrictions and extensions to PDF and ISO 32000-1[1] making it suitable for Advanced Electronic Signature
+-----------------------------------------
+PKCS 12
+In cryptography, PKCS #12 defines an archive file format for storing many cryptography objects as a single file. It is commonly used to bundle a private key with its X.509 certificate or to bundle all the members of a chain of trust. A PKCS #12 file may be encrypted and signed
+
+X 509
+An X.509 certificate is a digital certificate that uses the widely accepted international X.509 public key infrastructure (PKI) standard to verify that a public key belongs to the user, computer or service identity contained within the certificate.
+--------------------------------------
+Keystore
+This class represents a storage facility for cryptographic keys and certificates.
+
+A KeyStore manages different types of entries. Each type of entry implements the KeyStore.Entry interface. Three basic KeyStore.Entry implementations are provided:
+
+    KeyStore.PrivateKeyEntry
+
+    This type of entry holds a cryptographic PrivateKey, which is optionally stored in a protected format to prevent unauthorized access. It is also accompanied by a certificate chain for the corresponding public key.
+
+    Private keys and certificate chains are used by a given entity for self-authentication. Applications for this authentication include software distribution organizations which sign JAR files as part of releasing and/or licensing software.
+    KeyStore.SecretKeyEntry
+
+    This type of entry holds a cryptographic SecretKey, which is optionally stored in a protected format to prevent unauthorized access.
+    KeyStore.TrustedCertificateEntry
+
+    This type of entry contains a single public key Certificate belonging to another party. It is called a trusted certificate because the keystore owner trusts that the public key in the certificate indeed belongs to the identity identified by the subject (owner) of the certificate. 
+-----------------------------------
+Keytool
+keytool is a key and certificate management utility. It allows users to administer their own public/private key pairs and associated certificates for use in self-authentication (where the user authenticates himself/herself to other users/services) or data integrity and authentication services, using digital signatures.
+-----------------------------------
+DocMDPPermissions
+This class contains information about the DocMDP (Document modification detection and prevention) permissions. These permissions are applied when the document contains a certifying signature. DocMDP certifying signatures have one of three permission levels.
+- 1 Does not allow any changes.
+- 2 Allows filling in existing form fields and signatures.
+- 3 Allows filling in existing form fields and signatures, and creating, deleting, and modifying annotations
+---------------------------------------
+COSName
+This represents a digital signature that can be attached to a document.
+
+------------------
+Signaturebase
+Initialize the signature creator with a keystore (pkcs12) and pin that should be used for the signature
+-----------------------------------------
+
+tsa
+Time Stamping Authority
+
+
+Locating files through cmd
+*locate filename*
+*find . -name "filename"*
+
+
+
+
+
+
+
+
+
+
