@@ -79,6 +79,8 @@ tsa
 Time Stamping Authority
 
 
+linux commands
+
 Locating files through cmd
 *locate filename*
 *find . -name "filename"*
@@ -88,6 +90,18 @@ ctrl+H to see hidden files
 virtualbox
 copy file
 cp oldfilename newfile
+Delete
+rm fname
+-------------------------------
+ls ( list content of current directory ) 
+pwd ( print working directory ) 
+cd ( used for navigation )
+ cd.. ( back to previous direcrtory ) 
+cd/ ( back to root directory ) 
+cp ( copy files ) 
+rm ( remove file) 
+mkdir (make new directory ) 
+rmdir (remove directory)
 
 
 
