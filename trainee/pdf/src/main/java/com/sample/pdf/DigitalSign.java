@@ -221,8 +221,7 @@ SignatureInterface signatureInterface = isExternalSigning() ? null : this;
 
 // register signature dictionary and sign interface
 signatureOptions = new SignatureOptions();
-signatureOptions.setVisualSignature(createVisualSignatureTemplate(doc, 0, rect));
-signatureOptions.setPage(9);
+signatureOptions.setVisualSignature(createVisualSignatureTemplate(doc, 9, rect));
 doc.addSignature(signature, signatureInterface, signatureOptions);
 
 if (isExternalSigning())

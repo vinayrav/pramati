@@ -82,8 +82,12 @@ Time Stamping Authority
 Locating files through cmd
 *locate filename*
 *find . -name "filename"*
-
-
+"." before filename to hide it
+ctrl+H to see hidden files
+*touch newfilename* creates empty doc
+virtualbox
+copy file
+cp oldfilename newfile
 
 
 
