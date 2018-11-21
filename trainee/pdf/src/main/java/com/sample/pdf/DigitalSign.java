@@ -137,6 +137,11 @@ throw new IOException("Document for signing does not exist");
 setTsaUrl(tsaUrl);
 
 // creating output document and prepare the IO streams.
+//optional
+//DocMDPPermissions
+//- 1 Does not allow any changes.
+//- 2 Allows filling in existing form fields and signatures.
+//- 3 Allows filling in existing form fields and signatures, and creating, deleting, and modifying annotations
 FileOutputStream fos = new FileOutputStream(signedFile);
 
 PDDocument doc = PDDocument.load(inputFile);
@@ -222,6 +227,7 @@ SignatureInterface signatureInterface = isExternalSigning() ? null : this;
 // register signature dictionary and sign interface
 signatureOptions = new SignatureOptions();
 signatureOptions.setVisualSignature(createVisualSignatureTemplate(doc, 9, rect));
+
 doc.addSignature(signature, signatureInterface, signatureOptions);
 
 if (isExternalSigning())
@@ -274,6 +280,7 @@ doc.close();
 // See https://issues.apache.org/jira/browse/PDFBOX-3743
 IOUtils.closeQuietly(signatureOptions);
 }
+
 
 private PDRectangle createSignatureRectangle(PDDocument doc, Rectangle2D humanRect)
 {
@@ -446,7 +453,7 @@ return signature;
 * Arguments are
 * [0] key store
 * [1] pin
-* [2] document that will be signed
+* [2] document that needs to be signed
 * [3] image of visible signature
 *
 * @param args
