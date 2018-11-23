@@ -1,5 +1,8 @@
 Locating files through cmd
 *locate filename*
+
+"|"--pipe
+*locate filename | less* --can go through files line by line 
 *find . -name "filename"*
 "." before filename to hide it
 ctrl+H to see hidden files
@@ -19,3 +22,8 @@ cp ( copy files )
 rm ( remove file) 
 mkdir (make new directory ) 
 rmdir (remove directory)
+-----------------------------------
+whoami-to know who the user is
+passwd-to change sys password
+cat filename--shows the contents of file in terminal itself
+
