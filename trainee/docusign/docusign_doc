@@ -1,0 +1,95 @@
+﻿Integrator key:149652c9e-9a33-47eb-b675-3aff62b5e4a4
+redirect uri:https://www.docusign.com
+secret key:cf45aebe-cc75-47cd-8991-f033ef3cd640
+
+https://account-d.docusign.com/oauth/auth?response_type=code&scope=signature&
+client_id=49652c9e-9a33-47eb-b675-3aff62b5e4a4&
+state=a39fh23hnf23&
+redirect_uri=https://www.docusign.com
+
+                response_type=code
+                &scope=YOUR_REQUESTED_SCOPES
+                &client_id=YOUR_INTEGRATOR_KEY
+                &state=YOUR_CUSTOM_STATE
+                &redirect_uri=YOUR_REDIRECT_URI
+
+
+RESPONSE:authcode
+
+
+Step 2: Obtain the Access Token
+Once you have an authorization code, use the authentication service /oauth/token endpoint to obtain access and refresh tokens. You will use the access token to make API calls in a later step.
+
+SYNTAX:
+      curl --header "Authorization: Basic BASE64_COMBINATION_OF_INTEGRATOR_AND_SECRET_KEYS" 
+            --data "grant_type=authorization_code&
+              code=YOUR_AUTHORIZATION_CODE"
+            --request POST https://account-d.docusign.com/oauth/token
+
+curl --header "Authorization: Basic NDk2NTJjOWUtOWEzMy00N2ViLWI2NzUtM2FmZjYyYjVlNGE0OmNmNDVhZWJlLWNjNzUtNDdjZC04OTkxLWYwMzNlZjNjZDY0MA==" --data "grant_type=authorization_code&code=eyJ0eXAiOiJNVCIsImFsZyI6IlJTMjU2Iiwia2lkIjoiNjgxODVmZjEtNGU1MS00Y2U5LWFmMWMtNjg5ODEyMjAzMzE3In0.AQkAAAABAAYABwCAd8qgNl_WSAgAgANR6DZf1kgCACRWOR8nUCtDiIV8E-dJYMIVAAEAAAAYAAEAAAAFAAAADQAkAAAANDk2NTJjOWUtOWEzMy00N2ViLWI2NzUtM2FmZjYyYjVlNGE0MACAd8qgNl_WSBIAAQAAAAsAAABpbnRlcmFjdGl2ZQ.pSLT3150J7h3fM6zRhJNzlhe2KhSMDCLIAknyIp-dnJK1T3_8jw96v5oagp4H6GirjW_-CvDwXhoxjOdOcgqD08Dy1QJCphQJKj528DUz1yq9WhzbThJ1RdbOzUsQjnV6HsAgZRZDj2rmcnfbtP-apsQoRq8eHbeRpvKFWH2YNU03ELgPV55BeXQMwmFqFM5CUbUk4f_OfGkwaFca993thQ1gADjEgvDfJtgyaHaj8JstZuVTAh6-FTxLr2kRVcjnK-ZslyRnnRBYqHURusJuXwmSsxtLHIN5PYEEmRNhv8Mk8SHW6xl7WuVxrxbJTMeKitPxbYIGd9sJF3rckIp6A&state=a39fh23hnf23" --request POST https://account-d.docusign.com/oauth/token
+
+
+RESPONSE:
+     {
+        "access_token":"eyJ0eXAiOiJNVCIsImFsZyI6IlJTMjU2Iiwia2lkIjoiNjgxODVmZjEtNGU1MS00Y2U5LWFmMWMtNjg5ODEyMjAzMzE3In0.AQkAAAABAAUABwCAgjW8Nl_WSAgAgMJYynlf1kgCACRWOR8nUCtDiIV8E-dJYMIVAAEAAAAYAAEAAAAFAAAADQAkAAAANDk2NTJjOWUtOWEzMy00N2ViLWI2NzUtM2FmZjYyYjVlNGE0EgABAAAACwAAAGludGVyYWN0aXZlMACAd8qgNl_WSA.yf7_Xst4ZJrPK-q6YMPIZRioWVa5J6f_9pthWoeEdYAwy65ctZEbZ5Hk1SA4hrrLfk4MyfNpFrvu5i46ZSIHGFaMXtVB2HvO34dZvYy02qwcoLGMPEqrkb0CO4-qw2MrOtDR_RgNIZAx56Gdj_v4VjEl5QbYjKuIJH3yzJ48DUaYkszqQFNkjYvOKA9VkNWrMCt0B6JzXzP8_ax2gltd14qPzK6xUwC_eZY1vILpaPEDUiAwETOGaqBUCQbw3nKIGwii6tWk464ea8qsQpLAQchWBOh6CSdC5NejkA3oBRCP9wupqWnNQvRgvUzbx8VWHTGNYy-EhISSjxoIvonbEw",
+"token_type":"Bearer","refresh_token":"eyJ0eXAiOiJNVCIsImFsZyI6IlJTMjU2Iiwia2lkIjoiNjgxODVmZjEtNGU1MS00Y2U5LWFmMWMtNjg5ODEyMjAzMzE3In0.AQgAAAABAAgABwCAgjW8Nl_WSAgAgAKatMl21kgCACRWOR8nUCtDiIV8E-dJYMIVAAEAAAAYAAEAAAAFAAAADQAkAAAANDk2NTJjOWUtOWEzMy00N2ViLWI2NzUtM2FmZjYyYjVlNGE0MACAd8qgNl_WSA.kLC5DrkpQENnSCB9u7DRgfefK9e0wzOGs46vCTWSfJyor7KUddaGUSJVqZtxhM3706bfTkj1IzcO5kvTwFEx0Ts-dWuUMAtEDIFFXgn93ipzHxZB5OPN4OD7-eHXi6-bsMmvUQDn9eqWVU1Qxo9OPwXN8MGtucmPaRrPKHAmnQVnce65XIMNthTJolxwu2JkhOAD5ZpoUIDdWVADOI5sCKCk-iD8s1tCNF1PP1uq6vMspEjDy49pS_HX_9y9cLVZArTwdtJ6zeWMjLfikAR0RvlnleC_0AF4ZEoLwciEOuVGN5YYv_d7SQuV9_bMtDWEQP_Sg5JkGrsVvnC1eB0kbw","expires_in":28800}
+
+
+step 3:
+Retrieve User Account Data using the access token :
+
+Request:
+curl --request GET https://account-d.docusign.com/oauth/userinfo --header "Authorization: Bearer eyJ0eXAiOiJNVCIsImFsZyI6IlJTMjU2Iiwia2lkIjoiNjgxODVmZjEtNGU1MS00Y2U5LWFmMWMtNjg5ODEyMjAzMzE3In0.AQkAAAABAAUABwCAgjW8Nl_WSAgAgMJYynlf1kgCACRWOR8nUCtDiIV8E-dJYMIVAAEAAAAYAAEAAAAFAAAADQAkAAAANDk2NTJjOWUtOWEzMy00N2ViLWI2NzUtM2FmZjYyYjVlNGE0EgABAAAACwAAAGludGVyYWN0aXZlMACAd8qgNl_WSA.yf7_Xst4ZJrPK-q6YMPIZRioWVa5J6f_9pthWoeEdYAwy65ctZEbZ5Hk1SA4hrrLfk4MyfNpFrvu5i46ZSIHGFaMXtVB2HvO34dZvYy02qwcoLGMPEqrkb0CO4-qw2MrOtDR_RgNIZAx56Gdj_v4VjEl5QbYjKuIJH3yzJ48DUaYkszqQFNkjYvOKA9VkNWrMCt0B6JzXzP8_ax2gltd14qPzK6xUwC_eZY1vILpaPEDUiAwETOGaqBUCQbw3nKIGwii6tWk464ea8qsQpLAQchWBOh6CSdC5NejkA3oBRCP9wupqWnNQvRgvUzbx8VWHTGNYy-EhISSjxoIvonbEw"
+
+Response:
+{"sub":"1f395624-5027-432b-8885-7c13e74960c2",
+"name":"vin r",
+"given_name":"vin",
+"family_name":"r",
+"created":"2018-12-03T10:16:25.56",
+"email":"vinayr0325@gmail.com",
+"accounts":
+[
+{"account_id":"91f679ee-82b7-43b3-9603-71b39782269e",
+"is_default":true,
+"account_name":"p",
+"base_uri":"https://demo.docusign.net"}
+]
+}
+
+
+
+curl --request POST https://demo.docusign.net/restapi/v2/accounts/91f679ee-82b7-43b3-9603-71b39782269e/brands --header "Authorization: Bearer eyJ0eXAiOiJNVCIsImFsZyI6IlJTMjU2Iiwia2lkIjoiNjgxODVmZjEtNGU1MS00Y2U5LWFmMWMtNjg5ODEyMjAzMzE3In0.AQkAAAABAAUABwCAgjW8Nl_WSAgAgMJYynlf1kgCACRWOR8nUCtDiIV8E-dJYMIVAAEAAAAYAAEAAAAFAAAADQAkAAAANDk2NTJjOWUtOWEzMy00N2ViLWI2NzUtM2FmZjYyYjVlNGE0EgABAAAACwAAAGludGVyYWN0aXZlMACAd8qgNl_WSA.yf7_Xst4ZJrPK-q6YMPIZRioWVa5J6f_9pthWoeEdYAwy65ctZEbZ5Hk1SA4hrrLfk4MyfNpFrvu5i46ZSIHGFaMXtVB2HvO34dZvYy02qwcoLGMPEqrkb0CO4-qw2MrOtDR_RgNIZAx56Gdj_v4VjEl5QbYjKuIJH3yzJ48DUaYkszqQFNkjYvOKA9VkNWrMCt0B6JzXzP8_ax2gltd14qPzK6xUwC_eZY1vILpaPEDUiAwETOGaqBUCQbw3nKIGwii6tWk464ea8qsQpLAQchWBOh6CSdC5NejkA3oBRCP9wupqWnNQvRgvUzbx8VWHTGNYy-EhISSjxoIvonbEw"
+
+
+
+Generating refresh tokens
+ [Extra Step]:
+
+be sure to recreate the access token with help of refresh token as it expires in about 30 days usually:
+
+Request syntax
+        POST https://account-d.docusign.com/oauth/token
+                Authorization: Basic BASE64_COMBINATION_OF_INTEGRATOR_AND_SECRET_KEYS
+
+                grant_type=refresh_token&refresh_token=YOUR_REFRESH_TOKEN
+
+
+Request:
+     curl --header "Authorization: Basic NDk2NTJjOWUtOWEzMy00N2ViLWI2NzUtM2FmZjYyYjVlNGE0OmNmNDVhZWJlLWNjNzUtNDdjZC04OTkxLWYwMzNlZjNjZDY0MA==" --data "grant_type=refresh_token&refresh_token=eyJ0eXAiOiJNVCIsImFsZyI6IlJTMjU2Iiwia2lkIjoiNjgxODVmZjEtNGU1MS00Y2U5LWFmMWMtNjg5ODEyMjAzMzE3In0.AQgAAAABAAgABwCAgjW8Nl_WSAgAgAKatMl21kgCACRWOR8nUCtDiIV8E-dJYMIVAAEAAAAYAAEAAAAFAAAADQAkAAAANDk2NTJjOWUtOWEzMy00N2ViLWI2NzUtM2FmZjYyYjVlNGE0MACAd8qgNl_WSA.kLC5DrkpQENnSCB9u7DRgfefK9e0wzOGs46vCTWSfJyor7KUddaGUSJVqZtxhM3706bfTkj1IzcO5kvTwFEx0Ts-dWuUMAtEDIFFXgn93ipzHxZB5OPN4OD7-eHXi6-bsMmvUQDn9eqWVU1Qxo9OPwXN8MGtucmPaRrPKHAmnQVnce65XIMNthTJolxwu2JkhOAD5ZpoUIDdWVADOI5sCKCk-iD8s1tCNF1PP1uq6vMspEjDy49pS_HX_9y9cLVZArTwdtJ6zeWMjLfikAR0RvlnleC_0AF4ZEoLwciEOuVGN5YYv_d7SQuV9_bMtDWEQP_Sg5JkGrsVvnC1eB0kbw" --request POST https://account-d.docusign.com/oauth/token
+
+Response
+   {"access_token":"eyJ0eXAiOiJNVCIsImFsZyI6IlJTMjU2Iiwia2lkIjoiNjgxODVmZjEtNGU1MS00Y2U5LWFmMWMtNjg5ODEyMjAzMzE3In0.AQgAAAABAAUABwCAbRL8-1_WSAgAgK01Cj9g1kgCACRWOR8nUCtDiIV8E-dJYMIVAAEAAAAYAAEAAAAFAAAADQAkAAAANDk2NTJjOWUtOWEzMy00N2ViLWI2NzUtM2FmZjYyYjVlNGE0MACAd8qgNl_WSA.WPWQ1Dd5UB3ZQg6kvZelzLxL6wp9YYCf7t1Fk793QTiQuVmoPLF3DpF6o4B-53VAnv4FlPtBpl8qwPrXBsrBxLZXqbWHbpGfbouHgIq7vP_GYch-aZKeP0MlF8ELJ9bR7S1u1rOWcupn2Aa53ivGgRGNnLhkWSo57qme49CxRd33ghGElHj8rowSq6RpFSN87ASAEl7MDS3x1QhREgMK3jiLxKvLOReKo0N5G0xDiNfPvdTQhShORfZU5_QCSpYJ2OIuVrDBWRq4LwPqdUBghtgjfbJPJ85xh4KtO034UNv3Jwm9pNAlLKQ0eRbwFTeWKahBhdnxuJr8FdyIyONsZg","token_type":"Bearer","refresh_token":"eyJ0eXAiOiJNVCIsImFsZyI6IlJTMjU2Iiwia2lkIjoiNjgxODVmZjEtNGU1MS00Y2U5LWFmMWMtNjg5ODEyMjAzMzE3In0.AQgAAAABAAgABwCAbRL8-1_WSAgAgO129I531kgCACRWOR8nUCtDiIV8E-dJYMIVAAEAAAAYAAEAAAAFAAAADQAkAAAANDk2NTJjOWUtOWEzMy00N2ViLWI2NzUtM2FmZjYyYjVlNGE0MACAd8qgNl_WSA.CPTQGKmkcU6YwGzg8959vt7tgue2SR3v4Olqn4N668WbTcy5o9MFGNL9ixOqbGMMtRLkhZEqaPfETK5hv0R7hlj3sSbTcviu4Dnm34Fq6RmX5fPuP_HhUY9lQ--Zzbm6lUxhPe3GWmizcc6mPdo9sqJQ3hFC1ljqeQZsfTejwJIZ-aD8iltlTy3voqAmCh29ra-rPCx5qnPFB7XsReo2FN8uaTfbYSXVoMKpfkZCov3ybGT9J4-QjYWM7vuc45ixbup3ET6FtJ4w269Kv88KF1m6ivDyc2hXzHTM7ZtVvD4eQaPrlfF1zH4uTKKGrvspwtvOtwysHWCsEePV2sHplg","expires_in":28800}
+
+
+SENDING ENVELOPE 
+  json file:sign.json
+  convert file to base64
+  
+curl --header "Content-Type: application/json" --header "Authorization: Bearer eyJ0eXAiOiJNVCIsImFsZyI6IlJTMjU2Iiwia2lkIjoiNjgxODVmZjEtNGU1MS00Y2U5LWFmMWMtNjg5ODEyMjAzMzE3In0.AQkAAAABAAUABwCAgjW8Nl_WSAgAgMJYynlf1kgCACRWOR8nUCtDiIV8E-dJYMIVAAEAAAAYAAEAAAAFAAAADQAkAAAANDk2NTJjOWUtOWEzMy00N2ViLWI2NzUtM2FmZjYyYjVlNGE0EgABAAAACwAAAGludGVyYWN0aXZlMACAd8qgNl_WSA.yf7_Xst4ZJrPK-q6YMPIZRioWVa5J6f_9pthWoeEdYAwy65ctZEbZ5Hk1SA4hrrLfk4MyfNpFrvu5i46ZSIHGFaMXtVB2HvO34dZvYy02qwcoLGMPEqrkb0CO4-qw2MrOtDR_RgNIZAx56Gdj_v4VjEl5QbYjKuIJH3yzJ48DUaYkszqQFNkjYvOKA9VkNWrMCt0B6JzXzP8_ax2gltd14qPzK6xUwC_eZY1vILpaPEDUiAwETOGaqBUCQbw3nKIGwii6tWk464ea8qsQpLAQchWBOh6CSdC5NejkA3oBRCP9wupqWnNQvRgvUzbx8VWHTGNYy-EhISSjxoIvonbEw" --request POST --data @sign.json https://demo.docusign.net/restapi/v2/accounts/91f679ee-82b7-43b3-9603-71b39782269e/envelopes
+
+RESPONSE
+  "envelopeId": "207e23e0-4e96-41e5-a9ea-c32d2f526b69",
+  "uri": "/envelopes/207e23e0-4e96-41e5-a9ea-c32d2f526b69",
+  "statusDateTime": "2018-12-11T10:54:53.0370000Z",
+  "status": "sent"
