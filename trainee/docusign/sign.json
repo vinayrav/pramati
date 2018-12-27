@@ -24,8 +24,8 @@
         "tabs": {
           "signHereTabs": [
             {
-              "xPosition": "100",
-              "yPosition": "100",
+              "xPosition": "300",
+              "yPosition": "300",
               "documentId": "1",
               "pageNumber": "1"
             }
