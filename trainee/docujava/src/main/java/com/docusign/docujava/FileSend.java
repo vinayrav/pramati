@@ -1,41 +1,32 @@
 package com.docusign.docujava;
-
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Base64;
 import java.util.Scanner;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.http.client.utils.URIBuilder;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
-public class FileSend{
-	
-	  
+public class FileSend{		 
+private static Scanner input;
 
-
-public static void main(String[] args) throws URISyntaxException, UnirestException, IOException {
-
-	
+public static void main(String[] args) throws URISyntaxException, UnirestException, IOException {	
 String auth_url="https://account-d.docusign.com/oauth/auth";
 String client_id="5af20934-a3a7-45de-a002-e89416aabce8";
-String token_url="https://account-d.docusign.com/oauth/token";
 String callback_url="https://www.docusign.com";
 String secret_key="411f4c83-8848-41d4-80f4-86a6ccefe311";
     	 
- 
-String  response_type="code";
-String scope="signature";
-String state="a39fh23hnf23";
+//String  response_type="code";
+//String scope="signature";
+
 
 URIBuilder b = new URIBuilder(auth_url);
 b.addParameter("response_type", "code");
@@ -52,7 +43,7 @@ java.net.URL url = b.build().toURL();
             System.err.println("Exp : "+E.getMessage());
         }
         
-    Scanner input = new Scanner(System.in);
+    input = new Scanner(System.in);
     //String authorization_response
     System.out.println("enter url");
    
@@ -63,11 +54,11 @@ java.net.URL url = b.build().toURL();
      
      //getting authcode
      System.out.println(auth_code);
-       
+     
     // BASE64_COMBINATION_OF_INTEGRATOR_AND_SECRET_KEYS
      String encodeBytes = Base64.getEncoder().encodeToString((client_id+":"+secret_key).getBytes());
   System.out.println("encoded value is " + encodeBytes);
-  String  grant_type="authorization_code";
+  //String  grant_type="authorization_code";
   //Getting access token
   HttpResponse<JsonNode> response = Unirest.post("https://account-d.docusign.com/oauth/token")
 		  .header("Authorization", "Basic "+encodeBytes)
@@ -92,18 +83,15 @@ java.net.URL url = b.build().toURL();
       String account_id=accounts.getJSONObject(0).getString("account_id");
       System.out.println(base_uri);
       System.out.println(account_id);
-      
-      
+           
     System.out.println("enter recipient email: ");
   	String mail=input.next();
   	System.out.println("enter recipient name: ");
   	String name=input.next();
   	System.out.println("enter the full path of the file you want to send: ");
   	String file_path=input.next();
-  ;
-      
-      
-     // String path="/home/vinayr/Desktop/demo.pdf";
+          
+     // path="/home/vinayr/Desktop/demo.pdf";
 		File f =new File(file_path);
 		String file_name = f.getName();
 	    String fname = file_name.substring(0, file_name.lastIndexOf('.'));
@@ -116,7 +104,7 @@ java.net.URL url = b.build().toURL();
   // System.out.println(encodedString);
 		
 
-		HttpResponse<JsonNode> acc_response = Unirest.post("https://demo.docusign.net/restapi/v2/accounts/"+account_id+"/envelopes")
+		HttpResponse<JsonNode> acc_response = Unirest.post(base_uri+"/restapi/v2/accounts/"+account_id+"/envelopes")
 				  .header("Authorization", "Bearer "+access_token)
 				  .header("Content-Type", "application/json")
 				  .body("{\n  \"documents\": [\n    {\n      \"documentBase64\": \""+encodedString+"\",\n      \"documentId\": \"1\",\n      \"fileExtension\": \""+ext+"\",\n      \"name\": \""+fname+"\"\n    }\n  ],\n  \"emailSubject\": \"Please sign the sample file\",\n  \"recipients\": {\n    \"signers\": [\n      {\n        \"email\": \""+mail+"\",\n        \"name\":\""+name+"\",\n        \"recipientId\": \"1\",\n        \"routingOrder\": \"1\",\n        \"tabs\": {\n          \"signHereTabs\": [\n            {\n              \"xPosition\": \"450\",\n              \"yPosition\": \"650\",\n              \"documentId\": \"1\",\n              \"pageNumber\": \"1\"\n            }\n          ]\n        }\n      }\n    ]\n  },\n  \"status\": \"sent\"\n  }")
