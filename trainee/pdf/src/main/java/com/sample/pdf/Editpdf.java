@@ -1,29 +1,28 @@
 package com.sample.pdf;
 
-import java.io.File;
-import java.io.IOException;
-
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
-
-public class Editpdf {
-	public static void main(String[] args) throws IOException{
-		File documentFile=new File("/home/vinayr/Desktop/Documents/pdf/examplesigned.pdf");
-		PDDocument doc=PDDocument.load(documentFile);
-		PDPage page = new PDPage();
-		doc.addPage(page);
-		PDPageContentStream content=new PDPageContentStream(doc,page);
-		content.beginText();
-		content.setFont(PDType1Font.COURIER, 22);
-		content.showText("edited");
-		content.endText();
-		content.close();
-		doc.save(documentFile);
-		doc.close();
-		System.out.println("pdf is edited");
-		
-	}
-
-}
+import java.io.File;  
+import java.io.IOException;   
+import org.apache.pdfbox.pdmodel.PDDocument;  
+import org.apache.pdfbox.pdmodel.PDPage;  
+  
+public class Editpdf {  
+  
+    public static void main(String[] args)throws IOException {  
+              
+    //Loading an existing document   
+          File file = new File("/home/vinayr/Desktop/Documents/pramati/trainee/pdf/my_docsigned.pdf");   
+          PDDocument doc = PDDocument.load(file);   
+      
+         
+      
+    //Adding a blank page to the document   
+    doc.addPage(new PDPage());    
+  
+    //Saving the document   
+    doc.save("/home/vinayr/Desktop/Documents/pramati/trainee/pdf/my_docsigned.pdf");  
+  
+    //Closing the document    
+    doc.close();  
+    System.out.println("Page added"); 
+    }  
+}  

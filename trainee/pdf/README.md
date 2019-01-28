@@ -6,7 +6,7 @@ PDFBox is an open-source Java library
 It can be used to create, render, print, split, merge, alter, verify and extract text and meta-data of PDF files.
 
 ### Prerequisites
-Install Maven
+Install Eclipse (Maven)
 
 
 # Project files

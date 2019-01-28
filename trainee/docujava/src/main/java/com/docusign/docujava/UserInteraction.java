@@ -1,4 +1,5 @@
 package com.docusign.docujava;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -15,8 +16,8 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 public class UserInteraction {
  private static Scanner input;
  public static void main(String[] args) throws UnirestException, URISyntaxException, IOException {
-  Requests c = new Requests();
-  String data[] = c.ReturnUser();
+  Requests userinfo = new Requests();
+  String data[] = userinfo.returnUser();
   //System.out.println(data[0]);
   //System.out.println(data[1]);
   input = new Scanner(System.in);

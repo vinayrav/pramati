@@ -9,14 +9,12 @@ import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 public class Requests {
- public String[] ar;
- //public static void main(String[] args) throws UnirestException {
  
- public String ReturnStatus() throws UnirestException, MalformedURLException, URISyntaxException {
-  UrlBuild b = new UrlBuild();
-  String auth_code = b.ReturnAuth();
+ private String returnStatus() throws UnirestException, MalformedURLException, URISyntaxException {
+  UrlBuild authourizationcode = new UrlBuild();
+  String auth_code = authourizationcode.ReturnAuth();
   //combine and encoding client and secret key into base 64
-  String encodeBytes = Base64.getEncoder().encodeToString((b.client_id + ":" + b.secret_key).getBytes());
+  String encodeBytes = Base64.getEncoder().encodeToString((authourizationcode.client_id + ":" + authourizationcode.secret_key).getBytes());
   //System.out.println("encoded value is " + encodeBytes);
  // System.out.println(b.client_id);
   //Getting access token
@@ -31,24 +29,24 @@ public class Requests {
   return access_token;
  }
  
- public String[] ReturnUser() throws UnirestException, MalformedURLException, URISyntaxException {
-  Requests c = new Requests();
-  String token = c.ReturnStatus();
+ public String[] returnUser() throws UnirestException, MalformedURLException, URISyntaxException {
+  Requests accesstoken = new Requests();
+  String token = accesstoken.returnStatus();
   HttpResponse < JsonNode > user_response = Unirest.get("https://account-d.docusign.com/oauth/userinfo")
    .header("Authorization", "Bearer " + token)
    .asJson();
   JSONObject user_info = user_response.getBody().getObject();
-  /* System.out.println(user_info);
-  getting user info i.e
+   //System.out.println(user_info);
+  /*getting user info i.e
   baseuri
   account id*/
   JSONArray accounts = user_info.getJSONArray("accounts");
   String base_uri = accounts.getJSONObject(0).getString("base_uri");
   String account_id = accounts.getJSONObject(0).getString("account_id");
-  String ar[] = new String[3];
-  ar[0] = base_uri;
-  ar[1] = account_id;
-  ar[2] = token;
-  return ar;
+  String userdata[] = new String[3];
+  userdata[0] = base_uri;
+  userdata[1] = account_id;
+  userdata[2] = token;
+  return userdata;
  }
 }

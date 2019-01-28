@@ -1,6 +1,6 @@
 package req;
 
-import com.docusign.docujava.UrlBuild;
+import url.UrlBuild;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.util.Base64;
@@ -11,7 +11,7 @@ import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 public class Requests {
- public String[] ar;
+public String[] ar;
  //public static void main(String[] args) throws UnirestException {
  
  public String ReturnStatus() throws UnirestException, MalformedURLException, URISyntaxException {
@@ -54,3 +54,4 @@ public class Requests {
   return ar;
  }
 }
+
