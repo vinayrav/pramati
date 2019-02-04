@@ -15,6 +15,7 @@ Create inmemomry database h2
 Create an interface that extends JpaRepository.
 Create jsp (view page) in webapp folder i.e src->main-webapp->name.jsp
 (Mention the changes in application properties if the file is saved in other folder)
+Postman can be used for creating Requests.
 ```
 ## Dependencies to include
 ```
