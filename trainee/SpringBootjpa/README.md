@@ -46,7 +46,7 @@ Create jsp (view page) in webapp folder i.e src->main-webapp->name.jsp
 - show.jsp
 - Data.sql
 
-#Sample Curl Request
+## Sample Curl Request
 ```
 curl -X GET   http://localhost:8080/data   -H 'Authorization: Basic dm55OnF3ZXJ0eQ=='   -H 'Content-Type: application/json' 
 ```
