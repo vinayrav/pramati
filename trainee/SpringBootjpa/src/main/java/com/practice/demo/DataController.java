@@ -30,9 +30,9 @@ public class DataController {
 	
 	//@PostMapping is a composed annotation that acts as a shortcut for @RequestMapping(method = RequestMethod.POST)
 	@PostMapping(path="/data")    
-	public Data addData(@RequestBody Data daa) {
-		datarepo.save(daa);
-		return daa;
+	public Data addData(@RequestBody Data entry) {
+		datarepo.save(entry);
+		return entry;
 	}
 	
 	
