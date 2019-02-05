@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 //import org.springframework.web.servlet.ModelAndView;
@@ -29,26 +30,31 @@ public class DataController {
 	DataRepo datarepo;
 	
 	//@PostMapping is a composed annotation that acts as a shortcut for @RequestMapping(method = RequestMethod.POST)
+	//To add new entry to the data
 	@PostMapping(path="/data")    
 	public Data addData(@RequestBody Data entry) {
 		datarepo.save(entry);
 		return entry;
 	}
 	
-	
+	//To get the complete data
 	@GetMapping("/data") 
 	@ResponseBody
 	public List<Data> getData(){ 
 		return datarepo.findAll();
 	}
 	
-	
+	//To get specific details of data
+	//"id" to be given to get desired data
 	 @RequestMapping("/data/{bid}")
 	    @ResponseBody
 	    public Optional<Data> getidData(@PathVariable int bid){
 		return datarepo.findById(bid);
 	 }
 	
+	 
+	 //To delete specific entry
+	 //"id" of the entry to be deleted is given
 	@DeleteMapping("/data/{bid}")
 	public String deleteData(@PathVariable int bid) {
 		Data d=datarepo.getOne(bid);
@@ -56,14 +62,14 @@ public class DataController {
 		return "deleted"+d;	
 	}
 	
+	//To Update existing data
 	@PutMapping("/data")
 	public Data CreateOrUpdate(@RequestBody Data data){
 		datarepo.save(data);
-		System.out.println("updated");
+		//System.out.println("updated");
 		return data;
 	}
 	
-}
 
 
 	
@@ -73,8 +79,10 @@ public class DataController {
 //		mv.addObject(data);
 //		return mv;
 //	}
+}
 
 	
+
 
 
 

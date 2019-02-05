@@ -1,52 +1,96 @@
 # Spring Boot Demo
 Minimal Spring Boot sample app.
 
-## Installation
-Download Spring Tool suite latest version
- *https://spring.io/tools*
+## Requirement
+Maven
 
 ## Usage
-```
-Create Spring Starter project
-Create inmemomry database h2
-                        i.e(spring.h2.console.enabled=true
-                            spring.datasource.platform=h2
-                            spring.datasource.url=jdbc:h2:mem:tab)
-Create an interface that extends JpaRepository.
-Create jsp (view page) in webapp folder i.e src->main-webapp->name.jsp
-(Mention the changes in application properties if the file is saved in other folder)
-Postman can be used for creating Requests.
-```
-## Dependencies to include
-```
-<dependency>
-    <groupId>org.apache.tomcat</groupId>
-    <artifactId>tomcat-jasper</artifactId>
-    <version>9.0.14</version>
-</dependency>
-<dependency>
-    <groupId>com.h2database</groupId>
-    <artifactId>h2</artifactId>
-    <scope>runtime</scope>
-</dependency>
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-security</artifactId>
-    <version>2.1.2.RELEASE</version>
-</dependency>
-		
+Download Spring Tool suite latest version
+ *https://spring.io/tools*
+Open the project in Spring Tool suite
+    or
+You can run it in terminal by the command **mvn spring-boot:run** 
+- The application will run in `localhost` at port `8080`
+- Provide the User Credentials
+- To stop the server run `mvn -stop
+## User Credentials
+- Username:"vny"
+- Password:"qwerty"
 
-```
-## Files Included
-**Files included in this project**
-- Data
-- DataController
-- Data Repo
-- Security Config
-- home.jsp
-- show.jsp
-- Data.sql
+## Application
+**Arguments**
+- "bid":integer a unique identifier for the data
+- "bname":string name for the data
 
+## Adding Data
+### Definition
+**POST/data**
+Sample Data
+```
+ {
+        "bid": 9,
+        "bname": "b8"
+    }
+```
+RESPONSE
+```
+{
+    "bid": 9,
+    "bname": "b8"
+}
+```
+## Getting complete Data
+### Definition
+**GET/data**
+RESPONSE
+```
+[
+    {
+        "bid": 1,
+        "bname": "b1"
+    },
+    {
+        "bid": 2,
+        "bname": "b2"
+    },
+    {
+        "bid": 3,
+        "bname": "b3"
+    },
+    {
+        "bid": 9,
+        "bname": "b8"
+    }
+]
+```
+
+## Getting Desired Data
+### Definition
+**GET/data/{id}**
+SAMPLE RESPONSE 
+```
+{
+    "bid": 3,
+    "bname": "b3"
+}
+```
+## Deleting specific entry
+### Definition
+**DELETE/data/{id}**
+RESPONSE
+```
+deletedData [bid=9, bname=b8]
+```
+## Updating the Data
+### Definition
+**PUT/data**
+RESPONSE
+```
+{
+    "bid": 2,
+    "bname": "changed"
+}
+```
 ## Sample Curl Request
 ```
 curl -X GET   http://localhost:8080/data   -H 'Authorization: Basic dm55OnF3ZXJ0eQ=='   -H 'Content-Type: application/json' 
