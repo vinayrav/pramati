@@ -23,7 +23,7 @@ public class DataController {
 	@RequestMapping("/")
 	public String home()
 	{
-		return "home.jsp";
+		return "home";
 	}
 	
 	@Autowired

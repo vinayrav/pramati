@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FinalSign",
+            "request": "launch",
+            "mainClass": "com.sample.pdf.FinalSign",
+            "projectName": "pdf"
+        }
+    ]
+}

@@ -1,2 +1,17 @@
 suggestion while entering a mail?(fb)
 awt and util
+# in url
+DAO
+Autowiring
+LocalDate localDate
+algorithms like N-Queens problem and then, Travelling Salesman problem should be acquainted it.
+Shortest Path Algorithms. This includes three algorithms:
+i. Shortest distance from one point to another point - Djikstra
+ii. Shortest distance from one point to other points - Prim and Kruskal.
+iii. Shortest distance from each point to other points - Bellman Ford.
+
+
+insert into data values(1,'user1','pass1');
+insert into data values(1,'user2','pass2');
+
+
