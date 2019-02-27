@@ -1,0 +1,24 @@
+package com.ts.demo;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Entity
+public class Action {
+	@Id
+	private String ss;
+
+	
+	public String getSs() {
+		return ss;
+	}
+	public void setSs(String ss) {
+		this.ss = ss;
+	}
+public void show(){
+	System.out.print("f");
+}
+}

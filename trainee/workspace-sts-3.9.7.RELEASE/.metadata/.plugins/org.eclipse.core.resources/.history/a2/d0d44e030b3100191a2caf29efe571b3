@@ -1,0 +1,14 @@
+package com.practice.annotation;
+
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
+
+public class UserValidation implements ConstraintValidator<MyAnnotation, String>{
+
+	@Override
+	public boolean isValid(String value, ConstraintValidatorContext context) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

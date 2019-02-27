@@ -1,0 +1,8 @@
+package com.practice.annotation;
+
+import javax.validation.ConstraintValidator;
+
+public interface UsernameValidator extends ConstraintValidator<MyAnnotation, String> {
+	
+
+}

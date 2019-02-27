@@ -1,0 +1,11 @@
+package com.ts.demo;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class Homepage {
+	public void show() {
+		System.out.println("home");
+	}
+
+}

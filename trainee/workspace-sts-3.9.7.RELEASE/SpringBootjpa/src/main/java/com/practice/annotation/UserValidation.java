@@ -1,0 +1,27 @@
+package com.practice.annotation;
+
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.practice.demo.DataRepo;
+
+public class UserValidation implements ConstraintValidator<MyAnnotation, String>{
+
+	@Autowired
+	private DataRepo dataRepo;
+	
+	public void initialize(MyAnnotation constraintAnnotation) {
+		// TODO Auto-generated method stub
+		ConstraintValidator.super.initialize(constraintAnnotation);
+	}
+	@Override
+	public boolean isValid(String user, ConstraintValidatorContext context) {
+		// TODO Auto-generated method stub
+		if(dataRepo==null)
+			return true;
+		return dataRepo.findByUsername(user)==null;
+	}
+
+}

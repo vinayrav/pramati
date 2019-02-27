@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="DataControllerTests (1)" project="SpringBootjpaExtMemory" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="com.practice.demo.DataControllerTests" time="0.766">
+    <testcase name="testGetData" classname="com.practice.demo.DataControllerTests" time="0.471"/>
+    <testcase name="testGetDataById" classname="com.practice.demo.DataControllerTests" time="0.047"/>
+    <testcase name="testInvalidPostData" classname="com.practice.demo.DataControllerTests" time="0.066"/>
+    <testcase name="testPostData" classname="com.practice.demo.DataControllerTests" time="0.044"/>
+    <testcase name="testUpdateData" classname="com.practice.demo.DataControllerTests" time="0.138"/>
+  </testsuite>
+</testrun>

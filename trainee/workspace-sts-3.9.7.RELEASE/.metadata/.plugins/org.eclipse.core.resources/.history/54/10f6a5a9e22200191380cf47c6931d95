@@ -1,0 +1,13 @@
+package com.ts.demo;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class Homepage {
+	@RequestMapping("home")
+	public void show() {
+		System.out.println("Hi home");
+	}
+
+}
