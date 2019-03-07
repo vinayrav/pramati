@@ -10,8 +10,24 @@ i. Shortest distance from one point to another point - Djikstra
 ii. Shortest distance from one point to other points - Prim and Kruskal.
 iii. Shortest distance from each point to other points - Bellman Ford.
 
+//Enterprise applications have some common cross-cutting concerns THAT are applicable to different types of Objects and application modules
+
 
 insert into data values(1,'user1','pass1');
 insert into data values(1,'user2','pass2');
+
+
+    PUBLIC KEY ENCRYPTION
+ in which a message is encrypted with a recipient's public key. The message cannot be decrypted by anyone who does not possess the matching private key, who is thus presumed to be the owner of that key and the person associated with the public key. This is used in an attempt to ensure confidentiality.
+    DIGITAL SIGNATURES
+ in which a message is signed with the sender's private key and can be verified by anyone who has access to the sender's public key. This verification proves that the sender had access to the private key, and therefore is likely to be the person associated with the public key. This also ensures that the message has not been tampered with, as a signature is mathematically bound to the message it originally was made with, and verification will fail for practically any other message, no matter how similar to the original message.
+
+
+ENCRYPTION is meant to protect data in transit, 
+HASHING is meant to verify that a file or piece of data hasn’t been altered—that it is authentic.
+
+Read more at: https://www.thesslstore.com/blog/difference-encryption-hashing-salting/ 
+
+Hash fixed length?
 
 

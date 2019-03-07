@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.practice.customannotation.CustomAnnotation;
+
 //import org.springframework.web.servlet.ModelAndView;
 
 @RestController
@@ -25,7 +25,7 @@ public class DataController {
  @RequestMapping("/")
  //Displays home
  public String home() {
-  return "home";
+  return "welcome";
  }
 
  @Autowired
@@ -33,7 +33,7 @@ public class DataController {
 
  //@PostMapping is a composed annotation that acts as a shortcut for @RequestMapping(method = RequestMethod.POST)
  //To add new entry to the data
- @CustomAnnotation(methodName="post")
+ 
  @PostMapping(path = "/data")
  public Data addData(@RequestBody Data entry) {
   datarepo.save(entry);
