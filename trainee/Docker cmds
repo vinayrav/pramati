@@ -1,0 +1,16 @@
+To stop a running container
+sudo docker stop CONTAINERNAME
+
+
+To remove container
+sudo docker rm /CONTAINERNAME
+
+
+list container
+ sudo docker ps -a
+
+run
+docker containername
+
+
+

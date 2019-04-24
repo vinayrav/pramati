@@ -30,4 +30,12 @@ Read more at: https://www.thesslstore.com/blog/difference-encryption-hashing-sal
 
 Hash fixed length?
 
+X-Auth token?
+
+
+'Authorization: Basic ' means basic authentication, browser/client have to supply the username/password with each request.
+
+In case of 'x-auth-token' user has to supply username/password for the first time and server returns a access-token in header field 'x-auth-token'. For further sessions this token is exchanged, not the username/password.
+
+
 

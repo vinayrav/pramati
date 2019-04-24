@@ -1,0 +1,10 @@
+  "id": "sample string 1",
+  "enabled": "true",
+  "font": "sample string 3",
+  "fontSize": "sample string 4",
+  "fontColor": "sample string 5",
+  "displayAngle": "sample string 6",
+  "transparency": "sample string 7",
+  "watermarkText": "sample string 8",
+  "imageBase64": "sample string 9"
+}
