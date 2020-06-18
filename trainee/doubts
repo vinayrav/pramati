@@ -38,4 +38,20 @@ X-Auth token?
 In case of 'x-auth-token' user has to supply username/password for the first time and server returns a access-token in header field 'x-auth-token'. For further sessions this token is exchanged, not the username/password.
 
 
+Feitian
+https://www.ftsafe.com/
+
+
+FIDO2
+https://fidoalliance.org/fido2/
+
+
+
+
+
+ITR:
+
+TRANSACTION ID:7251826133
+USER ID:DSFPR8785F
+
 
